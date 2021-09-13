@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.tomgr.clientmods</groupId>
-    <artifactId>thirdperson</artifactId>
-    <version>1.2</version>
+    <groupId>dev.thource.wurmunlimited.clientmods</groupId>
+    <artifactId>thources-third-person-mod</artifactId>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
-    <name>betterwurm</name>
+    <name>Thource's Third Person Mod</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

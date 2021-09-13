@@ -1,4 +1,4 @@
-package org.tomgr.clientmods.thirdperson;
+package dev.thource.wurmunlimited.clientmods.thirdperson;
 
 import com.wurmonline.client.game.World;
 import com.wurmonline.client.renderer.RenderVector;
