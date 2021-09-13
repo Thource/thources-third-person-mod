@@ -25,8 +25,8 @@ public class ThirdPerson implements WurmClientMod, Initable, PreInitable, Consol
     private static final float PITCH_MIN = 1f;
 
     private float xOffset = 0f;
-    private static final float X_OFFSET_MAX = 0.1f;
-    private static final float X_OFFSET_MIN = -0.1f;
+    private static final float X_OFFSET_MAX = 5f;
+    private static final float X_OFFSET_MIN = -X_OFFSET_MAX;
 
     @Override
     public void preInit() {
@@ -64,8 +64,11 @@ public class ThirdPerson implements WurmClientMod, Initable, PreInitable, Consol
                     World world = ReflectionUtil.getPrivateField(
                             proxy, ReflectionUtil.getField(proxy.getClass(), "world"));
 
-                    float x = cameraOffset.getX();
-                    float z = cameraOffset.getZ();
+                    RenderVector target = new RenderVector(xOffset, 0, 0);
+                    target.rotateY(Math.toRadians(world.getPlayerRotX()));
+
+                    float x = cameraOffset.getX() - target.getX();
+                    float z = cameraOffset.getZ() - target.getZ();
                     double yaw = Math.atan2(z, x);
                     setPitch(world.getPlayerRotY());
                     return (float) method.invoke(proxy, args) + Math.cos(Math.toRadians(pitch)) * Math.cos(yaw) * zoomFactor * -dist;
@@ -96,8 +99,11 @@ public class ThirdPerson implements WurmClientMod, Initable, PreInitable, Consol
                     World world = ReflectionUtil.getPrivateField(
                             proxy, ReflectionUtil.getField(proxy.getClass(), "world"));
 
-                    float x = cameraOffset.getX();
-                    float z = cameraOffset.getZ();
+                    RenderVector target = new RenderVector(xOffset, 0, 0);
+                    target.rotateY(Math.toRadians(world.getPlayerRotX()));
+
+                    float x = cameraOffset.getX() - target.getX();
+                    float z = cameraOffset.getZ() - target.getZ();
                     double yaw = Math.atan2(z, x);
                     setPitch(world.getPlayerRotY());
                     return (float) method.invoke(proxy, args) + Math.sin(yaw) * Math.cos(Math.toRadians(pitch)) * zoomFactor * -dist;
