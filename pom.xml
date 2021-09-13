@@ -9,21 +9,6 @@
 
     <name>betterwurm</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.gotti.wurmunlimited</groupId>
-            <artifactId>client-modlauncher</artifactId>
-            <version>0.6</version>
-        </dependency>
-    </dependencies>
-
-    <repositories>
-        <repository>
-            <id>gotti-no-ip-org-ssh-repository</id>
-            <url>http://gotti.no-ip.org/maven/repository</url>
-        </repository>
-    </repositories>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
