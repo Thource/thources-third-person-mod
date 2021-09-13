@@ -16,7 +16,6 @@ public class ThirdPerson implements WurmClientMod, Initable, PreInitable, Consol
     private final float dist = 4f;
 
     private float zoomFactor = 1f;
-
     private static final float ZOOM_MAX = 5f;
     private static final float ZOOM_MIN = 0f;
 
