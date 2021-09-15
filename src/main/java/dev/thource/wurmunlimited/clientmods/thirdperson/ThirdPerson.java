@@ -107,6 +107,13 @@ public class ThirdPerson implements WurmClientMod, Initable, PreInitable, Consol
                     setPitch(world.getPlayerRotY());
                     return (float) method.invoke(proxy, args) + Math.sin(yaw) * Math.cos(Math.toRadians(pitch)) * zoomFactor * -dist;
                 });
+
+        HookManager.getInstance().registerHook("com.wurmonline.client.renderer.model.collada.animation.ColladaAnimation", "getAnimateCamera", null, () -> (proxy, method, args) -> {
+            if (tpActive) return false;
+
+            return method.invoke(proxy, args);
+        });
+
         ModConsole.addConsoleListener(this);
     }
 

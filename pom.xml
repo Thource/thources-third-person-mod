@@ -4,7 +4,7 @@
 
     <groupId>dev.thource.wurmunlimited.clientmods</groupId>
     <artifactId>thources-third-person-mod</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <packaging>jar</packaging>
 
     <name>Thource's Third Person Mod</name>
